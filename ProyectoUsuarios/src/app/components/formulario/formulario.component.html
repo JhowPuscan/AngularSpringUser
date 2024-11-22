@@ -1,0 +1,54 @@
+<form (ngSubmit)="enviarUsuario()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label>Nombres:</label>
+            <input type="text" class="form-control" placeholder="Ingrese nombres"
+                name="nombre" [(ngModel)]="usuario.nombre">
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label>Apellidos:</label>
+          <input type="text" class="form-control" placeholder="Ingrese apellidos"
+              name="apellidos" [(ngModel)]="usuario.apellidos">
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+          <label>Correo:</label>
+          <input type="email" class="form-control" placeholder="Ingrese correo"
+              name="correo" [(ngModel)]="usuario.correo">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label>Username:</label>
+        <input type="text" class="form-control" placeholder="Ingrese username"
+            name="username" [(ngModel)]="usuario.username">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+          <label>Password:</label>
+          <input type="password" class="form-control" placeholder="Ingrese password"
+              name="password" [(ngModel)]="usuario.password">
+      </div>
+
+      <div class="col-md-6 mb-3">
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center">
+
+            <button type="button" class="btn btn-secondary m-2" (click)="limpiarFormulario()">
+              <i class="fa-solid fa-broom"></i> Limpiar Formulario
+            </button>
+
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-floppy-disk"></i>
+              {{(usuario.id > 0) ? 'Actualizar Usuario' : 'Guardar Usuario'}}
+            </button>
+        </div>
+    </div>
+</form>
